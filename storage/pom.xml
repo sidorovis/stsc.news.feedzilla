@@ -35,6 +35,10 @@
     	  	<id>stsc-general-test-mvn-repo</id>
      		<url>https://raw.github.com/sidorovis/stsc/stsc.general/</url>
    		</repository>
+	    <repository>
+    	  	<id>feedzilla-java-mvn-repo</id>
+     		<url>https://raw.github.com/sidorovis/feedzilla-java/feedzilla-java/</url>
+   		</repository>
 	</repositories>
 
 	<properties>
