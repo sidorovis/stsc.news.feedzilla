@@ -10,6 +10,19 @@
 	<name>stsc.news.feedzilla.storage</name>
 	<url>https://github.com/sidorovis/stsc</url>
 
+	<properties>
+		<project.build.sourceEncoding>Cp1251</project.build.sourceEncoding>
+		<github.global.server>github</github.global.server>
+	</properties>
+
+	<distributionManagement>
+	    <repository>
+	        <id>internal.repo</id>
+	        <name>Temporary Staging Repository</name>
+	        <url>file://${project.build.directory}/mvn-repo</url>
+    	</repository>
+	</distributionManagement>
+
 	<repositories>
 	    <repository>
     	  	<id>stsc-common-mvn-repo</id>
@@ -41,9 +54,6 @@
    		</repository>
 	</repositories>
 
-	<properties>
-		<project.build.sourceEncoding>Cp1251</project.build.sourceEncoding>
-	</properties>
 	<build>
 		<defaultGoal>compile</defaultGoal>
 		<plugins>
@@ -60,6 +70,35 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
+   			<plugin>
+        		<artifactId>maven-deploy-plugin</artifactId>
+        		<version>2.8.1</version>
+        		<configuration>
+            		<altDeploymentRepository>internal.repo::default::file://${project.build.directory}/mvn-repo</altDeploymentRepository>
+        		</configuration>
+			</plugin>
+        <plugin>
+            <groupId>com.github.github</groupId>
+            <artifactId>site-maven-plugin</artifactId>
+            <version>0.11</version>
+            <configuration>
+                <message>#2 Maven artifacts for ${project.version}</message>
+                <noJekyll>true</noJekyll>
+                <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
+                <branch>refs/heads/stsc.news.feedzilla.storage</branch>
+                <includes><include>**/*</include></includes>
+                <repositoryName>stsc</repositoryName>
+                <repositoryOwner>sidorovis</repositoryOwner>
+            </configuration>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>site</goal>
+                </goals>
+                <phase>deploy</phase>
+              </execution>
+            </executions>
+        </plugin>
 		</plugins>
 	</build>
 	<dependencies>
