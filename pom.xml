@@ -35,5 +35,5 @@
 		<module>storage</module>
 		<module>downloader</module>
 	</modules>
-	<description>Stsc common is a common classes for stsc project.</description>
+	<description>Stsc feedzilla is a buch of classes to download / store / load-usage of feedzilla news feed.</description>
 </project>
