@@ -41,11 +41,11 @@
      		<url>https://raw.github.com/sidorovis/stsc/stsc.algorithms.equity.test/</url>
    		</repository>
 	    <repository>
-    	  	<id>stsc-storage-test-mvn-repo</id>
+    	  	<id>stsc-storage-mvn-repo</id>
      		<url>https://raw.github.com/sidorovis/stsc/stsc.storage/</url>
    		</repository>
 	    <repository>
-    	  	<id>stsc-general-test-mvn-repo</id>
+    	  	<id>stsc-general-mvn-repo</id>
      		<url>https://raw.github.com/sidorovis/stsc/stsc.general/</url>
    		</repository>
 	    <repository>
