@@ -9,7 +9,7 @@ public class FeedzillaToCsvExporterTest {
 
 	@Test
 	public void testFeedzillaToCsvExporter() throws FileNotFoundException, IOException {
-		//new FeedzillaToCsvExporter(new FeedzillaToCsvSettingsTest(new String[] { "../test_data/" }));
+		new FeedzillaToCsvExporter(new FeedzillaToCsvSettings(new String[] { "-of=./output.txt", "-f=../test_data/feed_data/" }));
 	}
 
 }
