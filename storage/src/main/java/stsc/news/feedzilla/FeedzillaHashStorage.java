@@ -78,8 +78,8 @@ public class FeedzillaHashStorage implements FeedzillaFileStorageReceiver {
 			hashArticles.add(FeedStorageHelper.createHashCode(a));
 		}
 		lastStoredArticlesAmount = hashArticles.size();
-		logger.info("Hashcode created. Categories: " + lastStoredCategoriesAmount + ". Subcategories: " + lastStoredSubcategoriesAmount
-				+ ". Articles: " + lastStoredArticlesAmount);
+		logger.info("Hashcode created. Categories: " + lastStoredCategoriesAmount + ". Subcategories: " + lastStoredSubcategoriesAmount + ". Articles: "
+				+ lastStoredArticlesAmount);
 		return storage;
 	}
 
@@ -93,8 +93,8 @@ public class FeedzillaHashStorage implements FeedzillaFileStorageReceiver {
 		if (hashArticles.size() != lastStoredArticlesAmount) {
 			saveArticles();
 		}
-		logger.info("Download iteration finished. Categories: " + lastStoredCategoriesAmount + ". Subcategories: "
-				+ lastStoredSubcategoriesAmount + ". Articles: " + lastStoredArticlesAmount);
+		logger.info("Download iteration finished. Categories: " + lastStoredCategoriesAmount + ". Subcategories: " + lastStoredSubcategoriesAmount
+				+ ". Articles: " + lastStoredArticlesAmount);
 		freeHash(daysDownloadFrom);
 		newArticles.clear();
 	}
@@ -124,7 +124,7 @@ public class FeedzillaHashStorage implements FeedzillaFileStorageReceiver {
 			lastStoredArticlesAmount = hashArticles.size();
 		}
 	}
-	
+
 	public void freeArticles() {
 		hashArticles.clear();
 	}
@@ -169,7 +169,7 @@ public class FeedzillaHashStorage implements FeedzillaFileStorageReceiver {
 		return result;
 	}
 
-	public void createFeedzillaArticle(FeedzillaFileSubcategory subcategory, FeedzillaFileArticle result) {
+	public void createFeedzillaArticle(FeedzillaFileSubcategory subcategory, FeedzillaFileArticle result) throws IOException {
 		synchronized (hashArticles) {
 			final int id = hashArticles.size();
 			result.setId(id);
@@ -177,7 +177,7 @@ public class FeedzillaHashStorage implements FeedzillaFileStorageReceiver {
 		}
 	}
 
-	private void putArticle(String hashCode, FeedzillaFileArticle result) {
+	private void putArticle(String hashCode, FeedzillaFileArticle result) throws IOException {
 		if (hashArticles.add(hashCode)) {
 			newArticles.add(result);
 			for (FeedzillaHashStorageReceiver r : receivers) {
@@ -195,7 +195,7 @@ public class FeedzillaHashStorage implements FeedzillaFileStorageReceiver {
 	}
 
 	@Override
-	public boolean addArticle(FeedzillaFileArticle article) {
+	public boolean addArticle(FeedzillaFileArticle article) throws IOException {
 		if (hashArticles.add(FeedStorageHelper.createHashCode(article))) {
 			for (FeedzillaHashStorageReceiver r : receivers) {
 				r.addArticle(article);

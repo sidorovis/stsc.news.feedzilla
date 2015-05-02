@@ -25,6 +25,10 @@ import stsc.news.feedzilla.file.schema.FeedzillaFileArticle;
 import stsc.news.feedzilla.file.schema.FeedzillaFileCategory;
 import stsc.news.feedzilla.file.schema.FeedzillaFileSubcategory;
 
+/**
+ * Usage example:</br> ffs = new {@link FeedzillaFileStorage}("./");</br>
+ * ffs.addReceiver(this);</br> ffs.readData();</br>
+ */
 public class FeedzillaFileStorage implements FeedStorage<FeedzillaFileArticle> {
 
 	static {
@@ -43,6 +47,14 @@ public class FeedzillaFileStorage implements FeedStorage<FeedzillaFileArticle> {
 	private final Map<Integer, FeedzillaFileSubcategory> subcategories = new ConcurrentHashMap<>();
 	private final List<FeedzillaFileArticle> articles = Collections.synchronizedList(new ArrayList<>());
 	private final Map<LocalDateTime, List<FeedzillaFileArticle>> articlesByDate = Collections.synchronizedMap(new TreeMap<>());
+
+	/**
+	 * Date Time by default is 00:00 _ 1st of Jan 1990. We do not store
+	 * feedzilla data by default.
+	 */
+	public FeedzillaFileStorage(String feedFolder) {
+		this(feedFolder, LocalDateTime.of(1990, 1, 1, 0, 0), false);
+	}
 
 	public FeedzillaFileStorage(String feedFolder, LocalDateTime dateBackDownloadFrom, boolean storeFeed) {
 		this.feedFolder = feedFolder;
@@ -63,8 +75,7 @@ public class FeedzillaFileStorage implements FeedStorage<FeedzillaFileArticle> {
 	private void readCategories() throws FileNotFoundException, IOException {
 		final File file = new File(feedFolder + "/" + "_categories" + FeedzillaFileSaver.FILE_EXTENSION);
 		if (file.exists()) {
-			try (DataInputStream f = new DataInputStream(new FileInputStream(feedFolder + "/" + "_categories"
-					+ FeedzillaFileSaver.FILE_EXTENSION))) {
+			try (DataInputStream f = new DataInputStream(new FileInputStream(feedFolder + "/" + "_categories" + FeedzillaFileSaver.FILE_EXTENSION))) {
 				final long sizeOfCategories = f.readLong();
 				for (long i = 0; i < sizeOfCategories; ++i) {
 					final FeedzillaFileCategory category = new FeedzillaFileCategory(f);
@@ -77,8 +88,7 @@ public class FeedzillaFileStorage implements FeedStorage<FeedzillaFileArticle> {
 	private void readSubcategories() throws FileNotFoundException, IOException {
 		final File file = new File(feedFolder + "/" + "_subcategories" + FeedzillaFileSaver.FILE_EXTENSION);
 		if (file.exists()) {
-			try (DataInputStream f = new DataInputStream(new FileInputStream(feedFolder + "/" + "_subcategories"
-					+ FeedzillaFileSaver.FILE_EXTENSION))) {
+			try (DataInputStream f = new DataInputStream(new FileInputStream(feedFolder + "/" + "_subcategories" + FeedzillaFileSaver.FILE_EXTENSION))) {
 				final long sizeOfSubcategories = f.readLong();
 				for (long i = 0; i < sizeOfSubcategories; ++i) {
 					final FeedzillaFileSubcategory subcategory = new FeedzillaFileSubcategory(f, categories);

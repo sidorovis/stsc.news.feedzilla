@@ -33,6 +33,7 @@
 	<modules>
 		<module>storage</module>
 		<module>downloader</module>
+		<module>export.csv</module>
 	</modules>
 	<description>Stsc feedzilla is a buch of classes to download / store / load-usage of feedzilla news feed.</description>
 </project>
