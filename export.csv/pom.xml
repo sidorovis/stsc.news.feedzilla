@@ -78,7 +78,7 @@
 					</descriptorRefs>
 					<archive>
 						<manifest>
-							<mainClass>stsc.news.feedzilla.export.csv.FeedzillaExportToCsv</mainClass>
+							<mainClass>stsc.news.feedzilla.export.csv.FeedzillaToCsvExporter</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
