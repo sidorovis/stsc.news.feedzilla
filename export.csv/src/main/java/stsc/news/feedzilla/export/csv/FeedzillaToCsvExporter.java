@@ -59,16 +59,20 @@ final class FeedzillaToCsvExporter implements FeedzillaFileStorageReceiver {
 	}
 
 	private void outputCategory(FeedzillaFileCategory category) throws IOException {
-		out.append(category.getEnglishCategoryName());
+		out.append(s(category.getEnglishCategoryName()));
 	}
 
 	private void outputSubcategory(FeedzillaFileSubcategory subcategory) throws IOException {
-		out.append("\t").append(subcategory.getEnglishSubcategoryName());
+		out.append("\t").append(s(subcategory.getEnglishSubcategoryName()));
 	}
 
 	private void outputArticle(FeedzillaFileArticle article) throws IOException {
-		out.append("\t").append(article.getSourceUrl()).append("\t").append(article.getPublishDate().toString()).append("\t").append(article.getTitle())
-				.append("\n");
+		out.append("\t").append(s(article.getSourceUrl())).append("\t").append(s(article.getPublishDate().toString())).append("\t")
+				.append(s(article.getTitle())).append("\n");
+	}
+
+	private String s(String param) {
+		return param.replaceAll("\n", "</br>").replaceAll("\t", "  ");
 	}
 
 }
