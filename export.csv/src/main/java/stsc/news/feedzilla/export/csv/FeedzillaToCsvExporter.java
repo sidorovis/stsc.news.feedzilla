@@ -6,16 +6,46 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.util.HashMap;
+import java.util.Map;
 
 import stsc.news.feedzilla.FeedzillaFileStorage;
 import stsc.news.feedzilla.FeedzillaFileStorageReceiver;
 import stsc.news.feedzilla.file.schema.FeedzillaFileArticle;
-import stsc.news.feedzilla.file.schema.FeedzillaFileCategory;
 import stsc.news.feedzilla.file.schema.FeedzillaFileSubcategory;
 
 final class FeedzillaToCsvExporter implements FeedzillaFileStorageReceiver {
 
+	private static final class Metric {
+
+		private final int categoryId;
+		private final int subcategoryId;
+		private boolean validated;
+
+		public Metric(FeedzillaFileArticle article) {
+			this.categoryId = article.getCategory().getId();
+			this.subcategoryId = article.getSubcategory().getId();
+			this.validated = true;
+		}
+
+		public void processArticle(FeedzillaFileArticle article) {
+			if (categoryId != article.getCategory().getId()) {
+				this.validated = false;
+			}
+			if (subcategoryId != article.getSubcategory().getId()) {
+				this.validated = false;
+			}
+		}
+
+		@Override
+		public String toString() {
+			return String.valueOf(categoryId) + "\t" + String.valueOf(subcategoryId) + "\t" + String.valueOf(validated);
+		}
+
+	}
+
 	private final OutputStreamWriter out;
+	private HashMap<FeedzillaFileSubcategory, Metric> metrics = new HashMap<>();
 
 	FeedzillaToCsvExporter(FeedzillaToCsvSettings settings) throws FileNotFoundException, IOException {
 		preValidate(settings);
@@ -25,6 +55,8 @@ final class FeedzillaToCsvExporter implements FeedzillaFileStorageReceiver {
 			final FeedzillaFileStorage fileStorage = new FeedzillaFileStorage(settings.getFeedDataFolder(), settings.getDateBackDownloadFrom(), false);
 			fileStorage.addReceiver(this);
 			fileStorage.readData();
+
+			outputData();
 		}
 	}
 
@@ -52,23 +84,23 @@ final class FeedzillaToCsvExporter implements FeedzillaFileStorageReceiver {
 
 	@Override
 	public boolean addArticle(FeedzillaFileArticle article) throws IOException {
-		outputCategory(article.getCategory());
-		outputSubcategory(article.getSubcategory());
-		outputArticle(article);
+		processArticle(article);
 		return false;
 	}
 
-	private void outputCategory(FeedzillaFileCategory category) throws IOException {
-		out.append(s(category.getEnglishCategoryName()));
+	private void processArticle(FeedzillaFileArticle article) {
+		final Metric metric = metrics.get(article.getSubcategory());
+		if (metric == null) {
+			metrics.put(article.getSubcategory(), new Metric(article));
+		} else {
+			metric.processArticle(article);
+		}
 	}
 
-	private void outputSubcategory(FeedzillaFileSubcategory subcategory) throws IOException {
-		out.append("\t").append(s(subcategory.getEnglishSubcategoryName()));
-	}
-
-	private void outputArticle(FeedzillaFileArticle article) throws IOException {
-		out.append("\t").append(s(article.getSourceUrl())).append("\t").append(s(article.getPublishDate().toString())).append("\t")
-				.append(s(article.getTitle())).append("\n");
+	private void outputData() throws IOException {
+		for (Map.Entry<FeedzillaFileSubcategory, Metric> e : metrics.entrySet()) {
+			out.append(s(e.getKey().getDisplaySubcategoryName())).append("\t").append(e.getValue().toString()).append("\n");
+		}
 	}
 
 	private String s(String param) {

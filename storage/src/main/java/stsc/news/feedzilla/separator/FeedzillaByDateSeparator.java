@@ -20,7 +20,7 @@ import stsc.news.feedzilla.file.schema.FeedzillaFileArticle;
 
 public class FeedzillaByDateSeparator {
 
-	private String feedFolder = "./feed_data";
+	private String feedFolder = "./cleaned_feed_data";
 	private String byDateFeedFolder = "./feed_data_by_date";
 	private boolean byMonth = true;
 
