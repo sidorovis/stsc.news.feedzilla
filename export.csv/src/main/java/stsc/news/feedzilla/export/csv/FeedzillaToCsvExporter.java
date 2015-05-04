@@ -6,8 +6,9 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
-import java.util.HashMap;
+import java.util.Comparator;
 import java.util.Map;
+import java.util.TreeMap;
 
 import stsc.news.feedzilla.FeedzillaFileStorage;
 import stsc.news.feedzilla.FeedzillaFileStorageReceiver;
@@ -16,36 +17,29 @@ import stsc.news.feedzilla.file.schema.FeedzillaFileSubcategory;
 
 final class FeedzillaToCsvExporter implements FeedzillaFileStorageReceiver {
 
-	private static final class Metric {
-
-		private final int categoryId;
-		private final int subcategoryId;
-		private boolean validated;
-
-		public Metric(FeedzillaFileArticle article) {
-			this.categoryId = article.getCategory().getId();
-			this.subcategoryId = article.getSubcategory().getId();
-			this.validated = true;
-		}
-
-		public void processArticle(FeedzillaFileArticle article) {
-			if (categoryId != article.getCategory().getId()) {
-				this.validated = false;
-			}
-			if (subcategoryId != article.getSubcategory().getId()) {
-				this.validated = false;
-			}
-		}
+	private static final class FeedzillaFileSubcategoryComparator implements Comparator<FeedzillaFileSubcategory> {
 
 		@Override
-		public String toString() {
-			return String.valueOf(categoryId) + "\t" + String.valueOf(subcategoryId) + "\t" + String.valueOf(validated);
+		public int compare(FeedzillaFileSubcategory arg0, FeedzillaFileSubcategory arg1) {
+			String lc = arg0.getCategory().getEnglishCategoryName();
+			String rc = arg1.getCategory().getEnglishCategoryName();
+			if (lc != rc) {
+				return lc.compareTo(rc);
+			}
+			String ls = arg0.getEnglishSubcategoryName();
+			String rs = arg1.getEnglishSubcategoryName();
+			if (ls != rs) {
+				return ls.compareTo(rs);
+			}
+			return 0;
 		}
 
 	}
 
 	private final OutputStreamWriter out;
-	private HashMap<FeedzillaFileSubcategory, Metric> metrics = new HashMap<>();
+	private TreeMap<FeedzillaFileSubcategory, Metric> metrics = new TreeMap<>(new FeedzillaFileSubcategoryComparator());
+
+	private final boolean deleteOutput = true;
 
 	FeedzillaToCsvExporter(FeedzillaToCsvSettings settings) throws FileNotFoundException, IOException {
 		preValidate(settings);
@@ -62,7 +56,11 @@ final class FeedzillaToCsvExporter implements FeedzillaFileStorageReceiver {
 
 	private void preValidate(FeedzillaToCsvSettings settings) {
 		if (new File(settings.getOutputFileName()).exists()) {
-			throw new IllegalArgumentException("output file " + settings.getOutputFileName() + " exists, please choose another one");
+			if (deleteOutput) {
+				new File(settings.getOutputFileName()).delete();
+			} else {
+				throw new IllegalArgumentException("output file " + settings.getOutputFileName() + " exists, please choose another one");
+			}
 		}
 		final File feedDataFolder = new File(settings.getFeedDataFolder());
 		if (!feedDataFolder.exists() || !feedDataFolder.isDirectory()) {
@@ -99,12 +97,8 @@ final class FeedzillaToCsvExporter implements FeedzillaFileStorageReceiver {
 
 	private void outputData() throws IOException {
 		for (Map.Entry<FeedzillaFileSubcategory, Metric> e : metrics.entrySet()) {
-			out.append(s(e.getKey().getDisplaySubcategoryName())).append("\t").append(e.getValue().toString()).append("\n");
+			out.append(e.getValue().toString()).append("\n");
 		}
-	}
-
-	private String s(String param) {
-		return param.replaceAll("\n", "</br>").replaceAll("\t", "  ");
 	}
 
 }
