@@ -97,7 +97,9 @@ final class FeedzillaToCsvExporter implements FeedzillaFileStorageReceiver {
 
 	private void outputData() throws IOException {
 		for (Map.Entry<FeedzillaFileSubcategory, Metric> e : metrics.entrySet()) {
-			out.append(e.getValue().toString()).append("\n");
+			if (e.getValue().isValidated()) {
+				out.append(e.getValue().toString()).append("\n");
+			}
 		}
 	}
 

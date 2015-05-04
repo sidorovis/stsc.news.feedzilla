@@ -1,0 +1,554 @@
+1	Art	1	Architecture
+1	Art	3	Books
+1	Art	4	Design
+1	Art	5	Film
+1	Art	1110	Painting
+1	Art	8	Photography
+1	Art	9	Street Art
+1	Art	10	Theater
+1	Art	11	Top Stories
+1	Art	12	Visual Arts
+2	Blogs	13	Accounting
+2	Blogs	14	Art
+2	Blogs	15	Business
+2	Blogs	16	Celebrities
+2	Blogs	17	Entertainment
+2	Blogs	19	Health
+2	Blogs	23	IT
+2	Blogs	21	Industry
+2	Blogs	22	Internet
+2	Blogs	24	Life Style
+2	Blogs	25	Music
+2	Blogs	26	Politics
+2	Blogs	29	Religion And Spirituality
+2	Blogs	30	Science
+2	Blogs	31	Society
+2	Blogs	32	Sports
+2	Blogs	34	Technology
+2	Blogs	35	Terrorism
+2	Blogs	36	Top News
+2	Blogs	37	Travel
+2	Blogs	38	Video Games
+3	Business	41	Americas
+3	Business	42	Asia
+3	Business	43	Automotive
+3	Business	44	Banking
+3	Business	45	Bonds
+3	Business	48	Canada
+3	Business	50	Commodities
+3	Business	51	Companies
+3	Business	52	Credit
+3	Business	54	Currencies
+3	Business	57	Currencies - US Dollar (USD)
+3	Business	60	E-Business
+3	Business	62	Earnings
+3	Business	64	Economy
+3	Business	65	Employment
+3	Business	66	Entrepreneurs
+3	Business	67	Europe
+3	Business	68	Finance
+3	Business	69	Finance - Banking
+3	Business	74	Finance - Funds
+3	Business	75	Finance - Insurance
+3	Business	1116	Finance - International Finance
+3	Business	76	Finance - Investing
+3	Business	77	Finance - Investing Picks
+3	Business	78	Finance - Ipos
+3	Business	79	Finance - Mergers And Acquisitions
+3	Business	82	Finance - Personal Finance
+3	Business	83	Finance - Retirement
+3	Business	86	Finance - Taxes
+3	Business	87	Finance - Us Markets
+3	Business	88	Finance - Venture Capital
+3	Business	89	Finance-Uk
+3	Business	92	Health And Safety
+3	Business	93	Insurance
+3	Business	95	Insurance - Health
+3	Business	97	Investing
+3	Business	98	Law
+3	Business	99	Law - Employment
+3	Business	102	Management
+3	Business	103	Marketing
+3	Business	105	Markets
+3	Business	106	Markets - Asia
+3	Business	107	Markets - Companies
+3	Business	108	Markets - Currencies
+3	Business	109	Markets - Emerging Markets
+3	Business	110	Markets - Hedge Funds
+3	Business	112	Markets - Mutual Funds
+3	Business	113	Markets - Real Estate 
+3	Business	114	Markets - Stocks
+3	Business	116	Markets - World Markets
+3	Business	118	Materials - Chemicals
+3	Business	119	Materials - Gold
+3	Business	120	Media
+3	Business	121	Middle East
+3	Business	122	Money
+3	Business	124	Privet Equity
+3	Business	125	Real Estate
+3	Business	126	Real Estate - Housing
+3	Business	129	Small Business
+3	Business	130	Startup Companies
+3	Business	131	Stock Analysis
+3	Business	132	Stock Exchange - Nasdaq
+3	Business	135	United States
+3	Business	136	Video
+3	Business	137	Work
+3	Business	1086	Work - Management
+3	Business	139	World News
+4	Celebrities	141	Alex Rodriguez
+4	Celebrities	1114	Alfonso Soriano
+4	Celebrities	145	Ashley Simpson
+4	Celebrities	149	Carlos Beltran
+4	Celebrities	1053	Eva Mendes
+4	Celebrities	152	General
+4	Celebrities	1117	Jake Gyllenhaal
+4	Celebrities	155	Jennifer Garner
+4	Celebrities	158	Madonna
+4	Celebrities	1124	Scarlett Johansson
+4	Celebrities	1109	Whoopi Goldberg
+5	Columnists	162	Act One
+5	Columnists	170	Capital
+5	Columnists	172	Chris Jones
+5	Columnists	174	Commentary
+5	Columnists	179	Elizabeth Bernstein
+5	Columnists	187	Global View
+5	Columnists	188	Globetrotting
+5	Columnists	195	James Tarnto
+5	Columnists	1126	Julies Health Club
+5	Columnists	219	Movies
+5	Columnists	226	Potomac Watch
+5	Columnists	251	Turn It Up
+6	Entertainment	257	Auto - Moto
+6	Entertainment	258	Bollywood
+6	Entertainment	259	Digital Audio
+6	Entertainment	261	Gamers
+6	Entertainment	262	Games
+6	Entertainment	263	Gossip
+6	Entertainment	264	Hollywood
+6	Entertainment	265	Movie Reviews
+6	Entertainment	266	Movies - Box Office
+6	Entertainment	268	Movies - Reviews
+6	Entertainment	269	Movies - Trailers
+6	Entertainment	270	Odd News
+6	Entertainment	274	Reality Tv
+6	Entertainment	275	Television
+7	Events	279	Health - Healthcare
+7	Events	280	Health - Medical
+7	Events	283	Location - Los Angeles
+7	Events	285	Location - New York City
+7	Events	289	Location - Vancouver
+8	Fun Stuff	295	Anime
+8	Fun Stuff	297	Comics
+8	Fun Stuff	301	Humor
+8	Fun Stuff	305	Quote Of The Day
+10	Health	313	Aging
+10	Health	316	Alzheimers
+10	Health	319	Beauty
+10	Health	320	Bird Flu
+10	Health	321	Cancer
+10	Health	331	Diabetes
+10	Health	336	Fitness
+10	Health	338	Genetics
+10	Health	339	Health - Kids
+10	Health	344	Heart
+10	Health	1092	Help
+10	Health	355	Neurology
+10	Health	357	Nutrition
+10	Health	358	Osteoporosis
+10	Health	359	Parenting
+10	Health	360	Physicians
+11	Hobbies	375	Amateur Science - Chemistry
+11	Hobbies	377	Amateur Science - Physics
+11	Hobbies	382	Animal - Horses
+11	Hobbies	384	Arts And Crafts - Drawing
+11	Hobbies	387	Arts And Crafts - Photography
+11	Hobbies	1094	Arts And Crafts - Pottery
+11	Hobbies	390	Cars
+11	Hobbies	391	Collecting - Comic Books
+11	Hobbies	393	Diy - Interior Design
+11	Hobbies	394	Diy- Home Repairs
+11	Hobbies	399	Observation - Horoscopes
+11	Hobbies	1067	Outdoor Activities - Paintball
+11	Hobbies	403	Outdoor Activities - Sailing
+11	Hobbies	1093	Outdoor Activities - Traveling
+14	IT	456	Crm
+14	IT	1058	Data Storage
+14	IT	458	Digital Imaging
+14	IT	459	Open Source
+14	IT	1059	Wifi
+14	IT	462	Wireless
+12	Industry	406	Aerospace
+12	Industry	407	Agriculture
+12	Industry	408	Airline
+12	Industry	409	Automobile
+12	Industry	412	Biotechnologies
+12	Industry	414	Computers - Hardware
+12	Industry	418	Energy
+12	Industry	419	Environment
+12	Industry	420	Fashion
+12	Industry	422	Financials
+12	Industry	423	Food
+12	Industry	426	Manufacturing
+12	Industry	1125	Metals
+12	Industry	428	Oil
+12	Industry	429	Pharmaceutical
+12	Industry	432	Restaurants
+12	Industry	433	Retail
+12	Industry	434	Semiconductors
+12	Industry	435	Software
+12	Industry	437	Transportation
+12	Industry	438	Unnamed
+12	Industry	439	Utilities
+13	Internet	443	Isp
+13	Internet	444	Java
+13	Internet	1068	Podcast
+13	Internet	447	Rss / Xml
+13	Internet	448	Search Engines
+13	Internet	450	Social Networking
+13	Internet	453	Web Development
+13	Internet	1069	Web Hosting
+13	Internet	454	Web Services
+15	Jobs	463	Accounting/Auditing
+15	Jobs	1102	Aerospace/Aviation/Defense
+15	Jobs	465	Agriculture/Fishing/Forestry
+15	Jobs	466	Biotech/Parmaceutical/Science
+15	Jobs	467	Construction/Extraction
+15	Jobs	468	Education/Training/Library
+15	Jobs	469	Healthcare
+15	Jobs	470	Information Technology
+15	Jobs	1122	Installation/Maintenance/Repair
+15	Jobs	471	Manufacturing/Production
+15	Jobs	473	Publishing/Printing
+15	Jobs	475	Transportation/Logistics
+17	Life Style	481	Food - Baking
+17	Life Style	484	Food - Cooking
+17	Life Style	485	Food - Dining
+17	Life Style	1060	Food - Hawaiian
+17	Life Style	486	Food - Recipes
+17	Life Style	488	Green Living
+17	Life Style	489	Home
+17	Life Style	490	Home Design
+17	Life Style	492	Luxury
+17	Life Style	495	Shopping
+17	Life Style	496	Wine
+17	Life Style	497	Womens Interests
+18	Music	498	Album Reviews
+18	Music	499	Alternative
+18	Music	500	Audio Software
+18	Music	1061	Christian
+18	Music	502	Classical
+18	Music	511	Jazz
+18	Music	513	Mp3 Players
+18	Music	514	Musicians
+18	Music	515	Musicians - Akon
+18	Music	517	Musicians - Beyonce Knowles
+18	Music	519	Musicians - Linkin Park
+18	Music	520	Musicians - Madonna
+18	Music	522	Punk
+18	Music	523	Rap / Hip Hop
+18	Music	525	Rock
+18	Music	526	Soul
+18	Music	527	Techno
+18	Music	529	Videos
+20	Politics	533	Europe - United Kingdom
+20	Politics	534	Foreign Affairs
+20	Politics	536	Military
+20	Politics	539	US
+20	Politics	540	US Congress
+20	Politics	541	Us Democrats
+20	Politics	542	Us Elections
+20	Politics	546	Us Republicans
+20	Politics	548	War
+21	Products	552	Cell Phones
+21	Products	556	Cell Phones - Samsung
+21	Products	560	Gps
+21	Products	563	Mp3
+21	Products	565	Printers
+21	Products	566	Reviews
+22	Programming	1113	Javascript
+22	Programming	568	Pdf
+22	Programming	572	Xml
+23	Religion And Spirituality	574	Christianity
+23	Religion And Spirituality	575	Horoscopes
+23	Religion And Spirituality	576	Hypnosis
+24	Science	580	Animals
+24	Science	583	Biology
+24	Science	584	Biotechnology
+24	Science	585	Chemistry
+24	Science	586	Climate
+24	Science	587	Climate Change
+24	Science	590	Mind And Brain
+24	Science	591	Nanotechnology
+24	Science	593	Physics
+24	Science	594	Policy / Ethics
+24	Science	1119	Political Science
+24	Science	596	Renewable Energies
+24	Science	597	Space
+25	Shopping	1063	Jewelery
+25	Shopping	601	Technology - Cell Phones
+25	Shopping	602	Technology - Desktops
+25	Shopping	603	Technology - Editors Choice
+25	Shopping	605	Technology - Handhelds
+25	Shopping	607	Technology - Networking
+25	Shopping	608	Technology - Notebooks
+25	Shopping	615	Technology - Software
+25	Shopping	619	Video Games - Most Recent
+26	Society	621	Crime
+26	Society	622	Culture
+26	Society	623	Culture - Pop Culture
+26	Society	625	Education
+26	Society	626	People - Babies
+26	Society	627	People - Family
+26	Society	633	Rights - Human Rights
+26	Society	635	Society - Uk
+27	Sports	638	Athletics
+27	Sports	640	Baseball
+27	Sports	643	Baseball - Baltimore Orioles
+27	Sports	644	Baseball - Boston Red Sox
+27	Sports	645	Baseball - Chicago Cubs
+27	Sports	646	Baseball - Chicago White Sox
+27	Sports	648	Baseball - Colorado Rockies
+27	Sports	651	Baseball - Los Angeles Dodgers
+27	Sports	653	Baseball - Minnesota Twins
+27	Sports	654	Baseball - Mlb
+27	Sports	656	Baseball - Mlb - Chicago White Sox
+27	Sports	660	Baseball - Ncaa
+27	Sports	664	Baseball - Pittsburgh Pirates
+27	Sports	665	Baseball - San Diego Padres
+27	Sports	668	Baseball - Texas Rangers
+27	Sports	669	Basketball
+27	Sports	671	Basketball - College
+27	Sports	673	Basketball - Nba
+27	Sports	674	Basketball - Nba - Atlanta Hawks
+27	Sports	675	Basketball - Nba - Boston Celtics
+27	Sports	677	Basketball - Nba - Chicago Bulls
+27	Sports	679	Basketball - Nba - Denver Nuggets
+27	Sports	681	Basketball - Nba - Los Angeles Clippers
+27	Sports	682	Basketball - Nba - Los Angeles Lakers
+27	Sports	685	Basketball - Nba - New-York Knicks
+27	Sports	688	Basketball - Nba - Utah Jazz
+27	Sports	689	Basketball - Nba - Washington Wizards
+27	Sports	690	Basketball - Ncaa Men
+27	Sports	691	Basketball - Ncaa Women
+27	Sports	692	Basketball - Wnba
+27	Sports	1071	Betting
+27	Sports	693	Bicycling
+27	Sports	695	Bodybuilding
+27	Sports	697	Boxing
+27	Sports	698	College Sports
+27	Sports	699	Cricket
+27	Sports	701	Extreme Sports - Skydiving
+27	Sports	702	Extreme Sports-  Bmx
+27	Sports	706	Football - Australia
+27	Sports	709	Football - Mls
+27	Sports	710	Football - Ncaa
+27	Sports	711	Football - Nfl
+27	Sports	714	Football - Nfl - Baltimore Ravens
+27	Sports	717	Football - Nfl - Chicago Bears
+27	Sports	721	Football - Nfl - Denver Broncos
+27	Sports	728	Football - Nfl - Miami Dolphins
+27	Sports	729	Football - Nfl - Minnesota Vikings
+27	Sports	730	Football - Nfl - New England Patriots
+27	Sports	735	Football - Nfl - Philadelphia Eagles
+27	Sports	738	Football - Nfl - San Francisco 49ers
+27	Sports	742	Football - Nfl - Washington Redskins
+27	Sports	744	Football - Soccer
+27	Sports	745	Football - Soccer (Us)
+27	Sports	1091	Football - Us
+27	Sports	746	Football - World Soccer
+27	Sports	747	Golf
+27	Sports	749	Hockey - Nhl
+27	Sports	750	Hockey - Nhl - Philidelphia Flyers
+27	Sports	751	Hockey - Nhl - Pittsburgh Penguins
+27	Sports	752	Horse Racing
+27	Sports	753	Ice Hockey
+27	Sports	754	Karate
+27	Sports	759	Motor - Auto Racing
+27	Sports	761	Motor - Nascar
+27	Sports	763	Outdoors
+27	Sports	764	Rugby
+27	Sports	765	Rugby Union
+27	Sports	768	Squash
+27	Sports	771	Tennis
+27	Sports	774	Us - Colleges
+27	Sports	775	Us - High School
+27	Sports	776	Us Sports
+27	Sports	777	Water Sports
+27	Sports	1108	Winter Sports - Curling
+28	Technology	786	Computers
+28	Technology	787	Computers - Apple/Mac
+28	Technology	790	Computers - Servers
+28	Technology	792	Emerging Technology
+28	Technology	793	Gadgets
+28	Technology	794	Green Technology
+28	Technology	795	Latest Technology
+28	Technology	796	Mobile/Cell Phones
+28	Technology	797	New Products
+28	Technology	799	Software - Linux
+28	Technology	800	Software - Open Source
+29	Top Blogs	805	Art And Design
+29	Top Blogs	806	Autos
+29	Top Blogs	807	Books And Literature
+29	Top Blogs	809	Life
+29	Top Blogs	810	Middle East Conflict
+29	Top Blogs	811	Money, Finance And Business
+29	Top Blogs	812	Nature And Science
+29	Top Blogs	813	News
+29	Top Blogs	815	USA
+31	Travel	817	Africa
+31	Travel	820	Australia
+31	Travel	1104	Bahamas
+31	Travel	1101	Greece
+31	Travel	826	Hawaii
+31	Travel	829	India - Chennai
+31	Travel	1064	India - New Delhi
+31	Travel	830	Jamaica
+31	Travel	831	Luxury Travel
+31	Travel	832	Mexico
+31	Travel	1065	Spain
+31	Travel	1066	Us - Hawaii
+33	USA	892	Alaska
+33	USA	893	Albany
+33	USA	894	Arizona
+33	USA	895	Boston
+33	USA	896	California
+33	USA	897	Charlotte
+33	USA	898	Chicago
+33	USA	899	Cincinnati
+33	USA	900	Colorado
+33	USA	901	Connecticut
+33	USA	902	Dallas
+33	USA	903	Florida
+33	USA	904	Georgia
+33	USA	905	Greensboro
+33	USA	906	Houston
+33	USA	907	Illinois
+33	USA	909	Jacksonville
+33	USA	910	Kansas City
+33	USA	911	Kentucky
+33	USA	912	Lancaster
+33	USA	913	Los Angeles
+33	USA	914	Maryland
+33	USA	915	Massachusetts
+33	USA	916	Michigan
+33	USA	917	Milwaukee
+33	USA	918	Minnesota
+33	USA	919	Missouri
+33	USA	920	Nashville
+33	USA	921	New Hampshire
+33	USA	922	New Jersey
+33	USA	923	New Mexico
+33	USA	924	New Orleans
+33	USA	925	New York
+33	USA	926	New York City
+33	USA	927	Oklahoma
+33	USA	928	Oklahoma City
+33	USA	929	Oregon
+33	USA	930	Orlando
+33	USA	931	Pennsylvania
+33	USA	932	Philadelphia
+33	USA	933	Phoenix
+33	USA	934	Pittsburgh
+33	USA	935	Rhode Island
+33	USA	936	Sacramento
+33	USA	937	San Antonio
+33	USA	938	San Francisco
+33	USA	939	Seattle
+33	USA	940	Tampa Bay Area
+33	USA	941	Texas
+33	USA	942	Utah
+33	USA	943	Virginia
+33	USA	944	Washington
+33	USA	945	Washington Dc
+33	USA	946	Wisconsin
+32	Universities	840	Alabama - Univesity Of Alabama
+32	Universities	841	Arkansas - Arkansas State University
+32	Universities	843	California - Ucla
+32	Universities	845	Delaware - University Of Delaware
+32	Universities	848	Florida - University Of Miami
+32	Universities	849	Georgia - Georgia Institute Of Technology
+32	Universities	851	Illinois - Northwestern University
+32	Universities	853	Iowa - Iowa State University
+32	Universities	854	Iowa - University Of Iowa
+32	Universities	855	Kentucky - University Of Kentucky
+32	Universities	856	Kentucky - University Of Louisville
+32	Universities	857	Louisiana - Lsu
+32	Universities	858	Maryland - John Hopkins University
+32	Universities	859	Maryland - University Of Maryland - College Park
+32	Universities	861	Massachusetts - Boston University
+32	Universities	864	Michigan - Michigan State University
+32	Universities	867	Mississippi - Mississippi State University
+32	Universities	868	New Hampshire - Dartmouth College
+32	Universities	871	New York - Syracuse University
+32	Universities	872	North Carolina - Duke University
+32	Universities	877	Pennsylvania - The Pennsylvania State University
+32	Universities	878	South Carolina - Clemson University
+32	Universities	880	Texas - Baylor University
+32	Universities	881	Texas - Southern Methodist University
+32	Universities	884	Us Navy Reserve
+32	Universities	888	Washington Dc - Georgetown University
+34	Video	948	Oddly Enough
+34	Video	949	World
+35	Video Games	955	Nintendo Ds
+35	Video Games	956	Pc
+35	Video Games	957	Playstation 2
+35	Video Games	958	Playstation 3
+35	Video Games	960	Revolution
+35	Video Games	1075	Xbox
+36	World News	963	Africa - Algeria
+36	World News	964	Africa - Angola
+36	World News	966	Africa - Botswana
+36	World News	969	Africa - Cameroon
+36	World News	975	Africa - East Africa
+36	World News	976	Africa - Egypt
+36	World News	977	Africa - Eritrea
+36	World News	978	Africa - Ethiopia
+36	World News	981	Africa - Ghana
+36	World News	1076	Africa - Ivory Coast
+36	World News	984	Africa - Kenya
+36	World News	985	Africa - Liberia
+36	World News	988	Africa - Malawi
+36	World News	992	Africa - Morocco
+36	World News	993	Africa - Mozambique
+36	World News	994	Africa - Namibia
+36	World News	996	Africa - Nigeria
+36	World News	997	Africa - Rwanda
+36	World News	999	Africa - Sierra Leone
+36	World News	1000	Africa - Somalia
+36	World News	1001	Africa - South Africa
+36	World News	1002	Africa - Sudan
+36	World News	1004	Africa - Tanzania
+36	World News	1006	Africa - Tunisia
+36	World News	1007	Africa - Uganda
+36	World News	1008	Africa - Zambia
+36	World News	1009	Africa - Zimbabwe
+36	World News	1010	America - Canada
+36	World News	1011	Asia - China
+36	World News	1012	Asia - India
+36	World News	1013	Asia - Japan
+36	World News	1015	Asia - Philippines
+36	World News	1016	Asia - Russia
+36	World News	1017	Asia - Singapore
+36	World News	1018	Asia - Thailand
+36	World News	1019	Asia - Vietnam
+36	World News	1020	Canada - Alberta
+36	World News	1021	Canada - British Columbia
+36	World News	1022	Canada - Manitoba
+36	World News	1023	Canada - Ontario
+36	World News	1105	Caribbean
+36	World News	1118	Central America - El Salvador
+36	World News	1025	Europe - France
+36	World News	1028	Europe - Ireland
+36	World News	1030	Europe - Malta
+36	World News	1033	Europe - Scotland
+36	World News	1115	Europe - Spain
+36	World News	1035	Europe - Sweden
+36	World News	1038	Middle East - Afghanistan
+36	World News	1039	Middle East - Iran
+36	World News	1041	Middle East - Israel
+36	World News	1048	South America - Paraguay
+36	World News	1078	Uk - Central Scotland
+36	World News	1079	Uk - East Midlands
+36	World News	1051	Uk - London
+36	World News	1080	Uk - Thames Valley
