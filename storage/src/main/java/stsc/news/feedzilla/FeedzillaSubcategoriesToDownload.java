@@ -11,7 +11,7 @@ import java.util.TreeSet;
  * And returns it as a list. Also provide possibility to check is
  * "category -> subcategory" available.
  */
-final class FeedzillaSubcategoriesToDownload {
+public final class FeedzillaSubcategoriesToDownload {
 
 	private static final String filename = "feedzilla_validated_subcategories.csv";
 
@@ -79,6 +79,7 @@ final class FeedzillaSubcategoriesToDownload {
 
 	}
 
+	private final TreeSet<String> categories = new TreeSet<>();
 	private final TreeSet<AvailableSubcategory> subcategories = new TreeSet<>();
 
 	public FeedzillaSubcategoriesToDownload() throws IOException {
@@ -88,6 +89,7 @@ final class FeedzillaSubcategoriesToDownload {
 			while (line != null) {
 				final String[] params = line.split("\t");
 				if (params.length == 4) {
+					categories.add(params[1]);
 					subcategories.add(new AvailableSubcategory(params[1], params[3]));
 				}
 				line = in.readLine();
@@ -95,7 +97,11 @@ final class FeedzillaSubcategoriesToDownload {
 		}
 	}
 
-	public boolean isValid(String categoryName, String subCategoryName) {
+	public boolean isValidCategory(String categoryName) {
+		return categories.contains(categoryName);
+	}
+
+	public boolean isValidSubcategory(String categoryName, String subCategoryName) {
 		return subcategories.contains(new AvailableSubcategory(categoryName, subCategoryName));
 	}
 

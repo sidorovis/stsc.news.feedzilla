@@ -10,8 +10,16 @@ public class FeedzillaSubcategoriesToDownloadTest {
 	@Test
 	public void testFeedzillaSubcategoriesToDownload() throws IOException {
 		final FeedzillaSubcategoriesToDownload std = new FeedzillaSubcategoriesToDownload();
-		Assert.assertTrue(std.isValid("Blogs", "Celebrities"));
-		Assert.assertFalse(std.isValid("Jobs", "NotExists"));
+		Assert.assertTrue(std.isValidSubcategory("Blogs", "Celebrities"));
+		Assert.assertFalse(std.isValidSubcategory("Jobs", "NotExists"));
+	}
+
+	@Test
+	public void testFeedzillaSubcategoriesToDownloadCategories() throws IOException {
+		final FeedzillaSubcategoriesToDownload std = new FeedzillaSubcategoriesToDownload();
+		Assert.assertTrue(std.isValidCategory("Blogs"));
+		Assert.assertTrue(std.isValidCategory("Jobs"));
+		Assert.assertFalse(std.isValidCategory("BadCategory"));
 	}
 
 	@Test

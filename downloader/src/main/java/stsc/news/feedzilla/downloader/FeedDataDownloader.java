@@ -5,6 +5,7 @@ import graef.feedzillajava.Category;
 import graef.feedzillajava.FeedZilla;
 import graef.feedzillajava.Subcategory;
 
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -20,6 +21,7 @@ import org.apache.logging.log4j.core.config.XMLConfigurationFactory;
 
 import stsc.common.service.statistics.DownloaderLogger;
 import stsc.common.service.statistics.StatisticType;
+import stsc.news.feedzilla.FeedzillaSubcategoriesToDownload;
 
 /**
  * {@link FeedDataDownloader} is a class that download feed's from FeedZilla and
@@ -38,6 +40,8 @@ public final class FeedDataDownloader {
 
 	private static Logger logger = LogManager.getLogger(FeedDataDownloader.class);
 
+	private final FeedzillaSubcategoriesToDownload feedzillaValidSubcategories;
+
 	private LocalDateTime dayDownloadFrom;
 	private final int amountOfArticlesPerRequest;
 	private final int articlesWaitTime;
@@ -48,11 +52,12 @@ public final class FeedDataDownloader {
 
 	private double multiplier = MIN_MULTIPLIER;
 
-	public FeedDataDownloader(int amountOfArticlesPerRequest, int articlesWaitTime) {
+	public FeedDataDownloader(int amountOfArticlesPerRequest, int articlesWaitTime) throws IOException {
 		this(LocalDateTime.now().minusDays(356 * 20), amountOfArticlesPerRequest, articlesWaitTime);
 	}
 
-	FeedDataDownloader(LocalDateTime dayDownloadFrom, int amountOfArticlesPerRequest, int articlesWaitTime) {
+	FeedDataDownloader(LocalDateTime dayDownloadFrom, int amountOfArticlesPerRequest, int articlesWaitTime) throws IOException {
+		this.feedzillaValidSubcategories = new FeedzillaSubcategoriesToDownload();
 		this.dayDownloadFrom = dayDownloadFrom;
 		this.amountOfArticlesPerRequest = amountOfArticlesPerRequest;
 		this.articlesWaitTime = articlesWaitTime;
@@ -78,6 +83,7 @@ public final class FeedDataDownloader {
 		if (categories.isEmpty())
 			return false;
 		for (Category category : categories) {
+
 			final long beginTime = System.currentTimeMillis();
 			CallableArticlesDownload.pause();
 			final List<Subcategory> subcategories = DownloadHelper.getSubcategories(feed, category, logger);
@@ -107,19 +113,16 @@ public final class FeedDataDownloader {
 				}
 			}
 			final long endTime = System.currentTimeMillis();
-			downloaderLogger.log(StatisticType.INFO, "Category " + category.getEnglishName() + " downloaded with "
-					+ amountOfProcessedArticles + " articles. For day " + dayDownloadFrom + ". Which took: " + (endTime - beginTime)
-					+ " millisec.");
+			downloaderLogger.log(StatisticType.INFO, "Category " + category.getEnglishName() + " downloaded with " + amountOfProcessedArticles
+					+ " articles. For day " + dayDownloadFrom + ". Which took: " + (endTime - beginTime) + " millisec.");
 		}
-		downloaderLogger.log(StatisticType.INFO, "Received amount of articles: " + amountOfProcessedArticles + " --- for date "
-				+ dayDownloadFrom.toString());
+		downloaderLogger.log(StatisticType.INFO, "Received amount of articles: " + amountOfProcessedArticles + " --- for date " + dayDownloadFrom.toString());
 		return result;
 	}
 
-	int getArticles(final Category category, final Subcategory subcategory, final LocalDateTime startOfDay, final double multiplyer)
-			throws Exception {
-		final FutureTask<Optional<List<Article>>> futureArticles = new FutureTask<>(new CallableArticlesDownload(feed, category,
-				subcategory, amountOfArticlesPerRequest, startOfDay));
+	int getArticles(final Category category, final Subcategory subcategory, final LocalDateTime startOfDay, final double multiplyer) throws Exception {
+		final FutureTask<Optional<List<Article>>> futureArticles = new FutureTask<>(new CallableArticlesDownload(feed, category, subcategory,
+				amountOfArticlesPerRequest, startOfDay));
 		final Thread thread = new Thread(new Runnable() {
 			@Override
 			public void run() {
