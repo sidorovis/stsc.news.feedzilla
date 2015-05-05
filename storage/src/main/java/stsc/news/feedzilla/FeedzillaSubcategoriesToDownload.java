@@ -11,7 +11,7 @@ import java.util.TreeSet;
  * And returns it as a list. Also provide possibility to check is
  * "category -> subcategory" available.
  */
-class final FeedzillaSubcategoriesToDownload {
+final class FeedzillaSubcategoriesToDownload {
 
 	private static final String filename = "feedzilla_validated_subcategories.csv";
 
