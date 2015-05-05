@@ -40,7 +40,7 @@ public final class FeedDataDownloader {
 
 	private static Logger logger = LogManager.getLogger(FeedDataDownloader.class);
 
-	private final FeedzillaSubcategoriesToDownload feedzillaValidSubcategories;
+	private final FeedzillaSubcategoriesToDownload feedzillaValidDatafeed;
 
 	private LocalDateTime dayDownloadFrom;
 	private final int amountOfArticlesPerRequest;
@@ -57,7 +57,7 @@ public final class FeedDataDownloader {
 	}
 
 	FeedDataDownloader(LocalDateTime dayDownloadFrom, int amountOfArticlesPerRequest, int articlesWaitTime) throws IOException {
-		this.feedzillaValidSubcategories = new FeedzillaSubcategoriesToDownload();
+		this.feedzillaValidDatafeed = new FeedzillaSubcategoriesToDownload();
 		this.dayDownloadFrom = dayDownloadFrom;
 		this.amountOfArticlesPerRequest = amountOfArticlesPerRequest;
 		this.articlesWaitTime = articlesWaitTime;
@@ -83,7 +83,9 @@ public final class FeedDataDownloader {
 		if (categories.isEmpty())
 			return false;
 		for (Category category : categories) {
-
+			if (!feedzillaValidDatafeed.isValidCategory(category.getEnglishName())) {
+				continue;
+			}
 			final long beginTime = System.currentTimeMillis();
 			CallableArticlesDownload.pause();
 			final List<Subcategory> subcategories = DownloadHelper.getSubcategories(feed, category, logger);
@@ -91,6 +93,9 @@ public final class FeedDataDownloader {
 				result = false;
 			}
 			for (Subcategory subcategory : subcategories) {
+				if (!feedzillaValidDatafeed.isValidCategory(subcategory.getEnglishName())) {
+					continue;
+				}
 				try {
 					amountOfProcessedArticles += getArticles(category, subcategory, dayDownloadFrom, multiplier);
 				} catch (Exception e) {
