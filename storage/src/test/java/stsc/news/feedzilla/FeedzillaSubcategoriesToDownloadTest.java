@@ -11,7 +11,12 @@ public class FeedzillaSubcategoriesToDownloadTest {
 	public void testFeedzillaSubcategoriesToDownload() throws IOException {
 		final FeedzillaSubcategoriesToDownload std = new FeedzillaSubcategoriesToDownload();
 		Assert.assertTrue(std.isValid("Blogs", "Celebrities"));
-		Assert.assertTrue(std.isValid("Jobs", "NotExists"));
+		Assert.assertFalse(std.isValid("Jobs", "NotExists"));
 	}
 
+	@Test
+	public void testFeedzillaSubcategoriesToDownloadAllVariables() throws IOException {
+		final FeedzillaSubcategoriesToDownload std = new FeedzillaSubcategoriesToDownload();
+		Assert.assertEquals(13949, std.toString().length());
+	}
 }

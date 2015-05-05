@@ -34,11 +34,47 @@ final class FeedzillaSubcategoriesToDownload {
 
 		@Override
 		public int compareTo(AvailableSubcategory o) {
-			if (categoryName == o.getCategoryName()) {
+			if (categoryName.equals(o.getCategoryName())) {
 				return subcategoryName.compareTo(o.getSubcategoryName());
 			} else {
 				return categoryName.compareTo(o.getCategoryName());
 			}
+		}
+
+		@Override
+		public int hashCode() {
+			final int prime = 31;
+			int result = 1;
+			result = prime * result + ((categoryName == null) ? 0 : categoryName.hashCode());
+			result = prime * result + ((subcategoryName == null) ? 0 : subcategoryName.hashCode());
+			return result;
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			AvailableSubcategory other = (AvailableSubcategory) obj;
+			if (categoryName == null) {
+				if (other.categoryName != null)
+					return false;
+			} else if (!categoryName.equals(other.categoryName))
+				return false;
+			if (subcategoryName == null) {
+				if (other.subcategoryName != null)
+					return false;
+			} else if (!subcategoryName.equals(other.subcategoryName))
+				return false;
+			return true;
+		}
+
+		@Override
+		public String toString() {
+			return categoryName + "::" + subcategoryName;
 		}
 
 	}
@@ -61,5 +97,14 @@ final class FeedzillaSubcategoriesToDownload {
 
 	public boolean isValid(String categoryName, String subCategoryName) {
 		return subcategories.contains(new AvailableSubcategory(categoryName, subCategoryName));
+	}
+
+	@Override
+	public String toString() {
+		String result = "";
+		for (AvailableSubcategory as : subcategories) {
+			result += as.toString() + "\n";
+		}
+		return result;
 	}
 }
