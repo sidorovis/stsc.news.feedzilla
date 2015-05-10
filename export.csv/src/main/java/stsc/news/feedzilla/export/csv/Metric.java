@@ -48,6 +48,18 @@ final class Metric {
 
 	public boolean isValidated() {
 		final long days = Duration.between(firstDateTime, lastDateTime).getSeconds() / 60 / 60 / 24;
+		if (categoryName.equalsIgnoreCase("IT")) {
+			return true;
+		}
+		if (subcategoryName.indexOf("Finance") >= 0) {
+			return true;
+		}
+		if (lastDateTime.isBefore(LocalDateTime.now().minusMonths(1).minusDays(11))) {
+			return false;
+		}
+		if (amountOfArticles < 100) {
+			return false;
+		}
 		return validated && (1.0 * amountOfArticles / days) > 2.0;
 	}
 
@@ -55,5 +67,11 @@ final class Metric {
 	public String toString() {
 		return categoryId + "\t" + categoryName + "\t" + subcategoryId + "\t" + subcategoryName;
 	}
+
+	// @Override
+	// public String toString() {
+	// return categoryName + "\t" + subcategoryName + "\t" + firstDateTime +
+	// "\t" + lastDateTime + "\t" + amountOfArticles;
+	// }
 
 }
