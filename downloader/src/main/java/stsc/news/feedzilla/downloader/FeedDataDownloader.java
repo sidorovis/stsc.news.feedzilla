@@ -47,7 +47,7 @@ public final class FeedDataDownloader {
 	private final int articlesWaitTime;
 	private List<LoadFeedReceiver> receivers = Collections.synchronizedList(new ArrayList<LoadFeedReceiver>());
 
-	private FeedZilla feed = new FeedZilla();
+	private FeedZilla feed = new FeedZilla(120000);
 	private volatile boolean stopped = false;
 
 	private double multiplier = MIN_MULTIPLIER;
@@ -78,7 +78,7 @@ public final class FeedDataDownloader {
 	public boolean download(DownloaderLogger downloaderLogger) throws InterruptedException {
 		boolean result = true;
 		int amountOfProcessedArticles = 0;
-		feed = new FeedZilla();
+		feed = new FeedZilla(120000);
 		final List<Category> categories = DownloadHelper.getCategories(feed, logger);
 		if (categories.isEmpty())
 			return false;

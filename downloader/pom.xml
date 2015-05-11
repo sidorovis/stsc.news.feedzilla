@@ -138,7 +138,7 @@
 		<dependency>
 			<groupId>graef</groupId>
 			<artifactId>feedzilla-java</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>0.0.2-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 	<description>Stsc news feedzilla downloader. This project is for download feedzilla news datafeed.</description>
