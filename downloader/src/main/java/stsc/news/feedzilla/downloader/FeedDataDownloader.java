@@ -32,6 +32,7 @@ public final class FeedDataDownloader {
 	private final static double MIN_MULTIPLIER = 1.0;
 	private final static double MAX_MULTIPLIER = 4.0;
 	private final static double STEP_MULTIPLIER = 1.5;
+	private final static int TIMEOUT_MILLISECS = 220000;
 
 	static {
 		System.setProperty(XMLConfigurationFactory.CONFIGURATION_FILE_PROPERTY, "./config/log4j2.xml");
@@ -47,7 +48,7 @@ public final class FeedDataDownloader {
 	private final int articlesWaitTime;
 	private List<LoadFeedReceiver> receivers = Collections.synchronizedList(new ArrayList<LoadFeedReceiver>());
 
-	private FeedZilla feed = new FeedZilla(120000);
+	private FeedZilla feed = new FeedZilla(TIMEOUT_MILLISECS);
 	private volatile boolean stopped = false;
 
 	private double multiplier = MIN_MULTIPLIER;
@@ -78,7 +79,7 @@ public final class FeedDataDownloader {
 	public boolean download(DownloaderLogger downloaderLogger) throws InterruptedException {
 		boolean result = true;
 		int amountOfProcessedArticles = 0;
-		feed = new FeedZilla(120000);
+		feed = new FeedZilla(TIMEOUT_MILLISECS);
 		final List<Category> categories = DownloadHelper.getCategories(feed, logger);
 		if (categories.isEmpty())
 			return false;

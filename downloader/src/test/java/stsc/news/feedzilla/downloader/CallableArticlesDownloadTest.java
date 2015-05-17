@@ -20,7 +20,7 @@ public class CallableArticlesDownloadTest {
 
 	@Test
 	public void testCallableArticlesDownload() throws Exception {
-		final FeedZilla feed = new FeedZilla();
+		final FeedZilla feed = new FeedZilla(220000);
 		final Category c = DownloadHelper.getCategories(feed, logger).get(0);
 		final Subcategory s = DownloadHelper.getSubcategories(feed, c, logger).get(0);
 		final CallableArticlesDownload callable = new CallableArticlesDownload(feed, c, s, 1, LocalDateTime.now().minusDays(10));
