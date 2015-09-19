@@ -4,14 +4,13 @@
 
 	<groupId>stsc</groupId>
 	<artifactId>stsc.news.feedzilla.storage</artifactId>
-	<version>0.0.18-WEBINTERFACE</version>
+	<version>0.0.19-BOM</version>
 	<packaging>jar</packaging>
 
 	<name>stsc.news.feedzilla.storage</name>
 	<url>https://github.com/sidorovis/stsc</url>
 
 	<properties>
-		<project.build.sourceEncoding>Cp1251</project.build.sourceEncoding>
 		<github.global.server>github</github.global.server>
 	</properties>
 
@@ -22,6 +21,18 @@
 			<url>file://${project.build.directory}/mvn-repo</url>
 		</repository>
 	</distributionManagement>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>stsc</groupId>
+				<artifactId>stsc.bom</artifactId>
+				<version>0.0.19-BOM</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<repositories>
 		<repository>
@@ -80,9 +91,9 @@
 			<plugin>
 				<groupId>com.github.github</groupId>
 				<artifactId>site-maven-plugin</artifactId>
-				<version>0.11</version>
+				<version>0.12</version>
 				<configuration>
-					<message>#2 Maven artifacts for ${project.version}</message>
+					<message>new version ${project.version} of stsc.news.feedzilla.storage deployed</message>
 					<noJekyll>true</noJekyll>
 					<outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
 					<branch>refs/heads/stsc.news.feedzilla.storage</branch>
@@ -107,28 +118,22 @@
 		<dependency>
 			<groupId>stsc</groupId>
 			<artifactId>stsc.common</artifactId>
-			<version>0.0.18-WEBINTERFACE</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.11</version>
-			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
-			<version>3.3.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-api</artifactId>
-			<version>2.0-beta9</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-core</artifactId>
-			<version>2.0-beta9</version>
 		</dependency>
 	</dependencies>
 	<description>Stsc news feedzilla storage project, possibility to store news datafeed (from feedzilla).</description>
