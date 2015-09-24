@@ -14,6 +14,13 @@
 		<project.build.sourceEncoding>Cp1251</project.build.sourceEncoding>
 	</properties>
 
+        <repositories>
+                <repository>
+                        <id>stsc-bom-repository</id>
+                        <url>https://raw.github.com/sidorovis/stsc/stsc.bom/</url>
+                </repository>
+        </repositories>
+
 	<build>
 		<defaultGoal>compile</defaultGoal>
 		<plugins>
