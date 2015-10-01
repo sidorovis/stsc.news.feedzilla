@@ -40,36 +40,8 @@
 			<url>http://repo1.maven.org/maven2/</url>
 		</repository>
 		<repository>
-			<id>stsc-bom-repository</id>
-			<url>https://raw.github.com/sidorovis/stsc/stsc.bom/</url>
-		</repository>
-		<repository>
-			<id>stsc-common-mvn-repo</id>
-			<url>https://raw.github.com/sidorovis/stsc/stsc.common/</url>
-		</repository>
-		<repository>
-			<id>stsc-signals-mvn-repo</id>
-			<url>https://raw.github.com/sidorovis/stsc/stsc.signals/</url>
-		</repository>
-		<repository>
-			<id>stsc-algorithms-common-mvn-repo</id>
-			<url>https://raw.github.com/sidorovis/stsc/stsc.algorithms.common/</url>
-		</repository>
-		<repository>
-			<id>stsc-algorithms-equity-test-mvn-repo</id>
-			<url>https://raw.github.com/sidorovis/stsc/stsc.algorithms.equity.test/</url>
-		</repository>
-		<repository>
-			<id>stsc-storage-mvn-repo</id>
-			<url>https://raw.github.com/sidorovis/stsc/stsc.storage/</url>
-		</repository>
-		<repository>
-			<id>stsc-general-mvn-repo</id>
-			<url>https://raw.github.com/sidorovis/stsc/stsc.general/</url>
-		</repository>
-		<repository>
-			<id>feedzilla-java-mvn-repo</id>
-			<url>https://raw.github.com/sidorovis/feedzilla-java/feedzilla-java/</url>
+			<id>stsc-mvn-repository</id>
+			<url>https://raw.github.com/sidorovis/stsc/stsc.repository/</url>
 		</repository>
 	</repositories>
 
@@ -123,11 +95,11 @@
 				<artifactId>site-maven-plugin</artifactId>
 				<version>0.12</version>
 				<configuration>
-					<message>new version ${project.version} of
-						stsc.news.feedzilla.downloader deployed</message>
+					<message>new version ${project.version} of stsc.news.feedzilla.downloader deployed</message>
 					<noJekyll>true</noJekyll>
+					<merge>true</merge>
 					<outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
-					<branch>refs/heads/stsc.news.feedzilla.downloader</branch>
+					<branch>refs/heads/stsc.repository</branch>
 					<includes>
 						<include>**/*</include>
 					</includes>
